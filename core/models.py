@@ -4,6 +4,7 @@ from django.db import models
 class Cliente(models.Model):
     nombres = models.CharField(max_length=128)
     apellidos = models.CharField(max_length=128)
+    documento = models.IntegerField()
 
     def save(self, *args, **kwargs):
         self.nombres = self.nombres.upper()
@@ -18,6 +19,8 @@ class Direccion(models.Model):
     direccion = models.CharField(max_length=256)
     principal = models.BooleanField()
     cliente = models.ForeignKey(Cliente, related_name='direcciones')
+    latitud = models.DecimalField(max_digits=11, decimal_places=9, null=True, blank=True)
+    longitud = models.DecimalField(max_digits=11, decimal_places=9, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if self.cliente.direcciones.count() == 0:
