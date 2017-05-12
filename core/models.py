@@ -10,6 +10,9 @@ class Cliente(models.Model):
         self.apellidos = self.apellidos.upper()
         super(Cliente, self).save(*args, **kwargs)
 
+    def __str__(self):
+        return "%s, %s" % (self.apellidos, self.nombres)
+
 
 class Direccion(models.Model):
     direccion = models.CharField(max_length=256)
@@ -17,6 +20,11 @@ class Direccion(models.Model):
     cliente = models.ForeignKey(Cliente, related_name='direcciones')
 
     def save(self, *args, **kwargs):
-        if self.principal:
+        if self.cliente.direcciones.count() == 0:
+            self.principal = True
+        elif self.principal:
             self.cliente.direcciones.update(principal=False)
         super(Direccion, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return "%s (%s)" % (self.direccion, self.principal)
