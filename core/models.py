@@ -11,12 +11,12 @@ class Cliente(models.Model):
         self.apellidos = self.apellidos.upper()
         super(Cliente, self).save(*args, **kwargs)
 
-    @property
-    def direccion_principal(self):
-        return self.direcciones.filter(principal=True).first()
+    #@property
+    #def direccion_principal(self):
+    #    return self.direcciones.filter(principal=True).first()
 
     def __str__(self):
-        return "%s, %s - (%s)" % (self.apellidos, self.nombres, self.direccion_principal)
+        return "%s, %s" % (self.apellidos, self.nombres)
 
 
 class Direccion(models.Model):

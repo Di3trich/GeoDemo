@@ -6,3 +6,4 @@ core/__pycache__/
 core/migrations/__pycache__/
 frontend/__pycache__/
 frontend/static/node_modules/
+log.txt
