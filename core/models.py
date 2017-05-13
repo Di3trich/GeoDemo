@@ -26,7 +26,6 @@ class Direccion(models.Model):
     longitud = models.DecimalField(max_digits=11, decimal_places=9, null=True, blank=True)
     cliente = models.ForeignKey(Cliente, related_name='direcciones')
 
-
     def save(self, *args, **kwargs):
         if self.cliente.direcciones.count() == 0:
             self.principal = True
