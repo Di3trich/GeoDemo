@@ -2,6 +2,7 @@ from django.shortcuts import render
 from core.models import Cliente, Direccion, Imagen
 from core.serializers import ClienteSerializer, DireccionSerializer, ImagenSerializer, PosicionSerializer
 from rest_framework import viewsets
+from core.utils import PositionSetPagination
 
 
 class ClienteViewSet(viewsets.ModelViewSet):
@@ -22,3 +23,4 @@ class ImagenViewSet(viewsets.ModelViewSet):
 class PositionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Direccion.objects.all()
     serializer_class = PosicionSerializer
+    pagination_class = PositionSetPagination
