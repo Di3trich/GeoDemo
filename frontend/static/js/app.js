@@ -3,6 +3,7 @@
     angular
         .module('GeoDemo', [
             'ngMap',
+            'ngMaterial',
             'ui.router'
         ])
         .config(config);
