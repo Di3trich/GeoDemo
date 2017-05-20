@@ -7,8 +7,6 @@
                 Caja Los Andes
             </md-button>
         </div>
-        <div flex>
-        </div>
     </div>
     <div flex layout="column">
         <div flex layout-align="start end" layout="column">
@@ -24,13 +22,12 @@
                     </md-button>
                 </md-fab-trigger>
                 <md-fab-actions>
-                    <md-button aria-label="Setting" class="md-fab md-raised md-mini">
-                        <md-icon>settings</md-icon>
+                    <md-button aria-label="Cliente" class="md-fab md-raised md-mini"
+                               ng-click="vm.launchComponent(vm.clienteDialog)">
+                        <md-icon>people</md-icon>
                     </md-button>
-                    <md-button aria-label="Facebook" class="md-fab md-raised md-mini" ng-click="vm.launchComponent(vm.clienteDialog)">
-                        <md-icon>lock</md-icon>
-                    </md-button>
-                    <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                    <md-button aria-label="Filtro" class="md-fab md-raised md-mini"
+                               ng-click="vm.launchComponent(vm.filtroDialog)">
                         <md-icon>search</md-icon>
                     </md-button>
                 </md-fab-actions>
@@ -38,64 +35,3 @@
         </div>
     </div>
 </div>
-<!--<!DOCTYPE html>
-<html>
-  <head>
-    <title>Travel modes in directions</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <script src="script-tags-for-development.js"></script>
-    <style>
-      html, body {width:100%; height: 100%; padding:0; margin: 0}
-      body {padding: 5px}
-      * { box-sizing: border-box; }
-    </style>
-  </head>
-  <body ng-app="ngMap">
-    <div style="width: 68%; float:left; height: 100%">
-
-      <ng-map zoom="14" center="current-location" >
-        <directions
-          draggable="true"
-          travel-mode="DRIVING"
-          origin="current-location"
-          destination="juliaca, perú">
-        </directions>
-      </ng-map>
-      <br/>
-      <br/>
-      <ng-map zoom="14" center="current-location" >
-        <directions
-          draggable="true"
-          travel-mode="DRIVING"
-          origin="juliaca, perú"
-          destination="current-location">
-        </directions>
-      </ng-map>
-
-    </div>
-
-  </body>
-</html>-->
-
-<!--<div class="lock-size" layout="row"  style="width: 100%; height: 100%; padding: 25px">
-
-        <md-fab-speed-dial md-direction="up" class="md-scale" ng-open="vm.openMenu">
-            <md-fab-trigger>
-                <md-button aria-label="menu" class="md-fab md-primary">
-                    <md-icon>menu</md-icon>
-                </md-button>
-            </md-fab-trigger>
-            <md-fab-actions>
-                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
-                    <md-icon>settings</md-icon>
-                </md-button>
-                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
-                    <md-icon>lock</md-icon>
-                </md-button>
-                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
-                    <md-icon>search</md-icon>
-                </md-button>
-            </md-fab-actions>
-        </md-fab-speed-dial>
-
-</div>-->

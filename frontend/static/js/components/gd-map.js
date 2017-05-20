@@ -22,7 +22,11 @@
         vm.currentLocation = currentLocation;
         vm.launchComponent = launchComponent;
         vm.clienteDialog = {
-            template: '<gd-cliente flex></gd-cliente>',
+            template: '<gd-cliente></gd-cliente>',
+            clickOutsideToClose: true
+        };
+        vm.filtroDialog = {
+            template: '<gd-filtro></gd-filtro>',
             clickOutsideToClose: true
         };
 
