@@ -5,12 +5,21 @@
         <md-icon aria-label="Close dialog">close</md-icon>
     </md-button>
 </div>
-<md-dialog-content>
-    Dialogo
+<md-dialog-content layout-padding>
+    <form name="filtro" layout="column">
+        <md-input-container flex>
+            <label>Criterio</label>
+            <input name="nombres y/o apellidos"/>
+        </md-input-container>
+        <md-input-container>
+            <label>Morozidad</label>
+            <input name="morosidad"/>
+        </md-input-container>
+    </form>
 </md-dialog-content>
 <md-dialog-actions layout-align="center center">
     <md-button class="md-raised md-primary">
-        Registrar
+        Filtrar
     </md-button>
     <md-button class="md-raised md-warn" ng-click="vm.cancelar()">
         Cancelar

@@ -19,6 +19,8 @@
         var vm = this;
         vm.cancelar = cancelar;
 
+
+
         function cancelar() {
             $mdDialog.cancel();
         }

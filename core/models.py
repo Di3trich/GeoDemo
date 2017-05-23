@@ -11,8 +11,8 @@ class Cliente(models.Model):
         self.apellidos = self.apellidos.upper()
         super(Cliente, self).save(*args, **kwargs)
 
-    #@property
-    #def direccion_principal(self):
+    # @property
+    # def direccion_principal(self):
     #    return self.direcciones.filter(principal=True).first()
 
     def __str__(self):
@@ -43,4 +43,20 @@ class Imagen(models.Model):
     direccion = models.ForeignKey(Direccion, related_name='imagenes')
 
     def __str__(self):
-        return self.descripcion;
+        return self.descripcion
+
+
+class Credito(models.Model):
+    monto = models.DecimalField(max_digits=14, decimal_places=4)
+    deuda = models.DecimalField(max_digits=14, decimal_places=4, default=0)
+    dias_mora = models.IntegerField(default=0)
+    cliente = models.ForeignKey(Cliente, related_name='creditos')
+
+    def __str__(self):
+        return "%lf%s" % (
+            self.monto,
+            ' (con %d día%s de mora)' % (
+                self.dias_mora,
+                's' if self.dias_mora > 1 else ''
+            ) if self.dias_mora > 0 else ' (al dia)'
+        )
